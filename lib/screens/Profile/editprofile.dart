@@ -6,6 +6,9 @@ class Editprofile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double res_width = MediaQuery.of(context).size.width;
+    double res_height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -41,7 +44,6 @@ class Editprofile extends StatelessWidget {
                     fit: BoxFit.cover)),
           ],
         ),
-        
       ),
       extendBodyBehindAppBar: true,
       body: Container(
@@ -58,10 +60,14 @@ class Editprofile extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(18.0, 8.0, 18.0, 18.0),
               child: Column(
                 children: [
-                 
-                        Image.asset('assets/slicing/Untitled-51.png',height: 150,),
-                    // backgroundColor: Colors.red,
-                  
+                  Container(
+                      width: res_width * 0.375,
+                      child: Image.asset(
+                        'assets/slicing/Untitled-51.png',
+                        height: 150,
+                      )),
+                  // backgroundColor: Colors.red,
+
                   // Positioned(
                   //   bottom: -10,
                   //   left: 80,
@@ -81,18 +87,36 @@ class Editprofile extends StatelessWidget {
                       labelText:
                           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
                       maxLines: 6),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0,vertical: 8),
-                    child: SizedBox(
-                        height: 50, //height of button
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: kPrimaryColor,
-                            ),
-                            onPressed: () {},
-                            child: Text("Safe"))),
-                  )
+                                      SizedBox(
+                  height: res_height * 0.0125,
+                ),
+                GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: Container(
+                    width: res_width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xffaf8a39),
+                        borderRadius: BorderRadius.all(Radius.circular(7))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(13.0),
+                      child: Center(
+                        child: Text(
+                          'Safe',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: res_height * 0.0125,
+                ),
+
                 ],
               ),
             ),
@@ -113,21 +137,24 @@ class profile_textfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double res_width = MediaQuery.of(context).size.width;
+    double res_height = MediaQuery.of(context).size.height;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Text(
-            "$hed",
-            style: TextStyle(color: Colors.black),
-          ),
+        Text(
+          "$hed",
+          style: TextStyle(color: Colors.black, fontSize: 15),
+        ),
+        SizedBox(
+          height: res_height * 0.01,
         ),
         Card(
           elevation: 8,
           child: Container(
             // height: 50,
-            padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
+            // padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
@@ -135,12 +162,15 @@ class profile_textfield extends StatelessWidget {
             child: TextField(
               maxLines: maxLines,
               decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "$labelText",
-              ),
+                  border: InputBorder.none,
+                  hintText: "$labelText",
+                  contentPadding: EdgeInsets.only(left: 10, top: maxLines != null ? 10 : 0)),
               // controller: controller,
             ),
           ),
+        ),
+        SizedBox(
+          height: res_height * 0.01,
         ),
       ],
     );
