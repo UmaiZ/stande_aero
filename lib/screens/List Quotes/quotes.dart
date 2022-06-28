@@ -126,43 +126,49 @@ class Quotes_Card extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "$MODEL",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w500),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "Location: ",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "$location",
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          "$description",
-                          style: TextStyle(fontSize: 9),
-                        ),
-                      ],
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "$MODEL",
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(
+                        height: res_height * 0.006,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Location: ",
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "$location",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: res_height * 0.006,
+                      ),
+                      Text(
+                        "$description",
+                        style: TextStyle(fontSize: 9),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: res_width * 0.05,
-                  ),
+                  // SizedBox(
+                  //   width: res_width * 0.05,
+                  // ),
                   Container(
-                      width: res_width * 0.35,
+                      width: res_width * 0.375,
                       height: res_height * 0.17,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
                       child: Image.asset(
                         "assets/slicing/Untitled-6.png",
                         fit: BoxFit.cover,
