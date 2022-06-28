@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:stande_aero/screens/Profile/profile.dart';
+// import 'package:stande_aero/screens/home/Profile/editprofile.dart';
+// import 'package:stande_aero/screens/home/Profile/profile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,6 +32,7 @@ class HomeScreen extends StatelessWidget {
           leading: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () {
+              Get.to(profile());
               // _key.currentState!.openDrawer();
             },
             child: Padding(

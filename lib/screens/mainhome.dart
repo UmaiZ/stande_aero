@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:stande_aero/bottomcontroller.dart';
 import 'package:stande_aero/helper/colors.dart';
+import 'package:stande_aero/screens/Profile/profile.dart';
+// import 'package:stande_aero/screens/home/Profile/profile.dart';
 import 'package:stande_aero/screens/home/home.dart';
 
 class MainScreen extends StatefulWidget {
@@ -79,7 +81,9 @@ class _MainScreenState extends State<MainScreen> {
         
         child: GetBuilder<BottomController>(
             builder: (_) => bottomctrl.navigationBarIndexValue == 0
-                ? HomeScreen()
+                ? HomeScreen() :bottomctrl.navigationBarIndexValue == 3
+                ? profile()
+                
                 
                             : Container()),
       ),
