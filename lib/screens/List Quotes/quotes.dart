@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:stande_aero/screens/List%20Quotes/list_of_Quote_details.dart';
 
 class quotes extends StatelessWidget {
   const quotes({Key? key}) : super(key: key);
@@ -118,62 +120,67 @@ class Quotes_Card extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: res_width * 0.925,
-          child: Card(
-            // margin: EdgeInsets.fromLTRB(18.0, 4.0, 18.0, 18.0),
-            elevation: 8,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "$MODEL",
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(
-                        height: res_height * 0.006,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Location: ",
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "$location",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: res_height * 0.006,
-                      ),
-                      Text(
-                        "$description",
-                        style: TextStyle(fontSize: 9),
-                      ),
-                    ],
-                  ),
-                  // SizedBox(
-                  //   width: res_width * 0.05,
-                  // ),
-                  Container(
-                      width: res_width * 0.375,
-                      height: res_height * 0.17,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(7))),
-                      child: Image.asset(
-                        "assets/slicing/Untitled-6.png",
-                        fit: BoxFit.cover,
-                      ))
-                ],
+        GestureDetector(
+          onTap: () {
+            Get.to(quotes_details());
+          },
+          child: Container(
+            width: res_width * 0.925,
+            child: Card(
+              // margin: EdgeInsets.fromLTRB(18.0, 4.0, 18.0, 18.0),
+              elevation: 8,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "$MODEL",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          height: res_height * 0.006,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "Location: ",
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "$location",
+                              style: TextStyle(fontSize: 12),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: res_height * 0.006,
+                        ),
+                        Text(
+                          "$description",
+                          style: TextStyle(fontSize: 9),
+                        ),
+                      ],
+                    ),
+                    // SizedBox(
+                    //   width: res_width * 0.05,
+                    // ),
+                    Container(
+                        width: res_width * 0.375,
+                        height: res_height * 0.17,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(7))),
+                        child: Image.asset(
+                          "assets/slicing/Untitled-6.png",
+                          fit: BoxFit.cover,
+                        ))
+                  ],
+                ),
               ),
             ),
           ),
