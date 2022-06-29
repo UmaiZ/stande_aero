@@ -74,97 +74,102 @@ class booking extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Column(
-            children: [
-              custum_Slider(res_width: res_width),
-              Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: pad, vertical: pad / 2),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'CF34-10 DAE',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                custum_Slider(res_width: res_width),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: pad, vertical: pad / 2),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'CF34-10 DAE',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                      Text(
+                        "Location: Miami, Florida",
+                        style: TextStyle(fontSize: 15, color: Colors.black),
+                      ),
+                      // Text(
+                      //   'Miami, Florida',
+                      //   style: TextStyle(color: Colors.black),
+                      // ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: pad),
+                  child: Text(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing",
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(pad),
+                  child: Container(
+                    decoration: BoxDecoration(color: Colors.white),
+                    // height: 200,
+                    child: TableCalendar(
+                      // daysOfWeekVisible: false,
+
+                      calendarStyle: CalendarStyle(
+                          todayDecoration: BoxDecoration(
+                              color: kPrimaryColor,
+                              borderRadius: BorderRadius.circular(50)),
+                          selectedDecoration:
+                              BoxDecoration(color: kPrimaryColor)),
+
+                      headerStyle: HeaderStyle(
+                          formatButtonVisible: false,
+                          titleCentered: true,
+                          leftChevronIcon: CircleAvatar(
+                            backgroundColor: kPrimaryColor,
+                            child: Icon(
+                              Icons.chevron_left,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                          ),
+                          rightChevronIcon: CircleAvatar(
+                            backgroundColor: kPrimaryColor,
+                            child: Icon(
+                              Icons.chevron_right,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                          ),
+                          decoration: BoxDecoration(color: Colors.white)),
+                      firstDay: DateTime.utc(2010, 10, 16),
+                      lastDay: DateTime.utc(2030, 3, 14),
+                      focusedDay: DateTime.now(),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: res_width * 0.9,
+                  decoration: BoxDecoration(
+                      color: Color(0xffaf8a39),
+                      borderRadius: BorderRadius.all(Radius.circular(7))),
+                  child: Padding(
+                    padding: EdgeInsets.all(13.0),
+                    child: Center(
+                      child: Text(
+                        'Select Booking Dates',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
                       ),
                     ),
-                    Text(
-                      "Location: Miami, Florida",
-                      style: TextStyle(fontSize: 15, color: Colors.black),
-                    ),
-                    // Text(
-                    //   'Miami, Florida',
-                    //   style: TextStyle(color: Colors.black),
-                    // ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: pad),
-                child: Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing",
-                  style: TextStyle(fontSize: 15, color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(pad),
-                child: Container(
-                  decoration: BoxDecoration(color: Colors.white),
-                  child: TableCalendar(
-                    // daysOfWeekVisible: false,
-                    
-                    calendarStyle: CalendarStyle(
-                        todayDecoration: BoxDecoration(
-                            color: kPrimaryColor,
-                            borderRadius: BorderRadius.circular(50)),
-                        selectedDecoration:
-                            BoxDecoration(color: kPrimaryColor)),
-                    // calendarFormat: false,
-                    headerStyle: HeaderStyle(
-                        leftChevronIcon: CircleAvatar(
-                          backgroundColor: kPrimaryColor,
-                          child: Icon(
-                            Icons.chevron_left,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                        ),
-                        rightChevronIcon: CircleAvatar(
-                          backgroundColor: kPrimaryColor,
-                          child: Icon(
-                            Icons.chevron_right,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                        ),
-                        decoration: BoxDecoration(color: Colors.white)),
-                    firstDay: DateTime.utc(2010, 10, 16),
-                    lastDay: DateTime.utc(2030, 3, 14),
-                    focusedDay: DateTime.now(),
                   ),
                 ),
-              ),
-              Container(
-                width: res_width * 0.9,
-                decoration: BoxDecoration(
-                    color: Color(0xffaf8a39),
-                    borderRadius: BorderRadius.all(Radius.circular(7))),
-                child: Padding(
-                  padding: EdgeInsets.all(13.0),
-                  child: Center(
-                    child: Text(
-                      'Select Booking Dates',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
