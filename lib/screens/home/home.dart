@@ -38,7 +38,6 @@ class HomeScreen extends StatelessWidget {
           leading: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () {
-              Get.to(kyc_form());
               _key.currentState!.openDrawer();
             },
             child: Padding(

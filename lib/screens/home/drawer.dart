@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stande_aero/bottomcontroller.dart';
+import 'package:stande_aero/screens/about/aboutus.dart';
+import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
 
 class NavDrawer extends StatefulWidget {
   const NavDrawer({Key? key}) : super(key: key);
@@ -140,6 +142,134 @@ class _NavDrawerState extends State<NavDrawer> {
                           ),
                           Text(
                             'Profile',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-18.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'Notification',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-18.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'Chat',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Get.to(() => kyc_form());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-18.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'Kyc Form',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Get.to(() => Aboututs());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-18.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'About us',
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           )
                         ],
