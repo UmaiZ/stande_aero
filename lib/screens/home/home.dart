@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:stande_aero/screens/Profile/profile.dart';
 import 'package:stande_aero/screens/booking/booking.dart';
+import 'package:stande_aero/screens/credit_Form/credit_form.dart';
 import 'package:stande_aero/screens/home/drawer.dart';
 import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
 // import 'package:stande_aero/screens/home/Profile/editprofile.dart';
