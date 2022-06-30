@@ -33,21 +33,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          leading: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () {
-              Navigator.pop(context);
-              // _key.currentState!.openDrawer();
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(15),
-              child: Container(
-                  width: 25,
-                  child: Image.asset(
-                    'assets/slicing/Untitled-3.png',
-                  )),
-            ),
-          ),
+          // leading: GestureDetector(
+          //   behavior: HitTestBehavior.translucent,
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //     // _key.currentState!.openDrawer();
+          //   },
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(15),
+          //     child: Container(
+          //         width: 25,
+          //         child: Image.asset(
+          //           'assets/slicing/Untitled-3.png',
+          //         )),
+          //   ),
+          // ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -8,6 +8,7 @@ import 'package:stande_aero/screens/List%20Quotes/quotes.dart';
 import 'package:stande_aero/screens/Profile/profile.dart';
 // import 'package:stande_aero/screens/home/Profile/profile.dart';
 import 'package:stande_aero/screens/home/home.dart';
+import 'package:stande_aero/screens/notifications/notification.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -80,11 +81,13 @@ class _MainScreenState extends State<MainScreen> {
           child: GetBuilder<BottomController>(
               builder: (_) => bottomctrl.navigationBarIndexValue == 0
                   ? HomeScreen()
-                  : bottomctrl.navigationBarIndexValue == 2
-                      ? quotes()
-                      : bottomctrl.navigationBarIndexValue == 3
-                          ? profile()
-                          : Container()),
+                  : bottomctrl.navigationBarIndexValue == 1
+                      ? NotificationScreen()
+                      : bottomctrl.navigationBarIndexValue == 2
+                          ? quotes()
+                          : bottomctrl.navigationBarIndexValue == 3
+                              ? profile()
+                              : Container()),
         ),
       ),
     );
