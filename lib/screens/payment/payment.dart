@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:stande_aero/screens/payment/wiretransfer.dart';
 
 class payment extends StatelessWidget {
   const payment({Key? key}) : super(key: key);
@@ -43,6 +46,7 @@ class payment extends StatelessWidget {
           ],
         ),
       ),
+      
       extendBodyBehindAppBar: true,
       body: Container(
         width: double.infinity,
@@ -171,38 +175,41 @@ class payment extends StatelessWidget {
               SizedBox(
                 height: res_height * 0.01,
               ),
-              Container(
-                width: res_width * 0.95,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(7))),
-                child: Padding(
-                  padding: const EdgeInsets.all(13.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Image.asset(
-                      //   "assets/slicing/Untitled-55.png",
-                      //   width: res_width * 0.1,
-                      // ),
-                      Text(
-                        "Wire transfer",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13),
-                      ),
-                      SizedBox(
-                        width: res_width * 0.23,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Image.asset(
-                          "assets/slicing/Untitled-63.png",
-                          width: res_width * 0.025,
+              GestureDetector(
+                onTap: (){Get.to(() => WireTransfer());},
+                child: Container(
+                  width: res_width * 0.95,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.all(Radius.circular(7))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(13.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Image.asset(
+                        //   "assets/slicing/Untitled-55.png",
+                        //   width: res_width * 0.1,
+                        // ),
+                        Text(
+                          "Wire transfer",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: res_width * 0.23,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 8.0),
+                          child: Image.asset(
+                            "assets/slicing/Untitled-63.png",
+                            width: res_width * 0.025,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

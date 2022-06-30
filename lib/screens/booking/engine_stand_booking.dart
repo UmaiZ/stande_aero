@@ -49,6 +49,7 @@ class stand_booking extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: Container(
         width: double.infinity,
+        height: double.infinity,
         // height:  double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -163,7 +164,7 @@ class stand_booking extends StatelessWidget {
                     padding: EdgeInsets.all(13.0),
                     child: Center(
                       child: Text(
-                        'Select Booking Dates',
+                        'Get a quote',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

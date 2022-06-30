@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stande_aero/screens/List%20Quotes/quotes.dart';
+import 'package:stande_aero/screens/payment/payment.dart';
 
 class quotes_details extends StatelessWidget {
   const quotes_details({Key? key}) : super(key: key);
@@ -264,20 +266,25 @@ class quotes_details extends StatelessWidget {
                   SizedBox(
                     height: res_height * 0.02,
                   ),
-                  Container(
-                    width: res_width * 0.95,
-                    decoration: BoxDecoration(
-                        color: Color(0xffaf8a39),
-                        borderRadius: BorderRadius.all(Radius.circular(7))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(13.0),
-                      child: Center(
-                        child: Text(
-                          'Place Order',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(() => payment());
+                    },
+                    child: Container(
+                      width: res_width * 0.95,
+                      decoration: BoxDecoration(
+                          color: Color(0xffaf8a39),
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Center(
+                          child: Text(
+                            'Place Order',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
                         ),
                       ),
                     ),
