@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:stande_aero/screens/mainhome.dart';
 import 'package:stande_aero/screens/orders/orderstatusdetail.dart';
 
 class OrderStatus extends StatefulWidget {
@@ -128,7 +129,7 @@ class _OrderStatusState extends State<OrderStatus> {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Get.to(() => OrderStatusDetail(type: "Progress"));
                           },
                           child: Row(
@@ -177,8 +178,10 @@ class _OrderStatusState extends State<OrderStatus> {
                           height: res_height * 0.05,
                         ),
                         GestureDetector(
-                           onTap: (){
-                            Get.to(() => OrderStatusDetail(type: "Shipped",));
+                          onTap: () {
+                            Get.to(() => OrderStatusDetail(
+                                  type: "Shipped",
+                                ));
                           },
                           child: Row(
                             children: [
@@ -228,8 +231,10 @@ class _OrderStatusState extends State<OrderStatus> {
                           height: res_height * 0.05,
                         ),
                         GestureDetector(
-                           onTap: (){
-                            Get.to(() => OrderStatusDetail(type: "Route",));
+                          onTap: () {
+                            Get.to(() => OrderStatusDetail(
+                                  type: "Route",
+                                ));
                           },
                           child: Row(
                             children: [
@@ -279,8 +284,10 @@ class _OrderStatusState extends State<OrderStatus> {
                           height: res_height * 0.05,
                         ),
                         GestureDetector(
-                           onTap: (){
-                            Get.to(() => OrderStatusDetail(type: "Arrived",));
+                          onTap: () {
+                            Get.to(() => OrderStatusDetail(
+                                  type: "Arrived",
+                                ));
                           },
                           child: Row(
                             children: [
@@ -330,7 +337,34 @@ class _OrderStatusState extends State<OrderStatus> {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: res_height * 0.02,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => MainScreen());
+                },
+                child: Container(
+                  width: res_width * 0.95,
+                  decoration: BoxDecoration(
+                      color: Color(0xffaf8a39),
+                      borderRadius: BorderRadius.all(Radius.circular(7))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(13.0),
+                    child: Center(
+                      child: Text(
+                        'Done',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
               // Stepper(
               //     // type: stepperType,
 
