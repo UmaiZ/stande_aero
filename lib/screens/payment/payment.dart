@@ -46,7 +46,6 @@ class payment extends StatelessWidget {
           ],
         ),
       ),
-      
       extendBodyBehindAppBar: true,
       body: Container(
         width: double.infinity,
@@ -127,12 +126,15 @@ class payment extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 13),
                       ),
-                      SizedBox(
-                        width: res_width * 0.23,
-                      ),
-                      Image.asset(
-                        "assets/slicing/Untitled-63.png",
-                        width: res_width * 0.025,
+                      // SizedBox(
+                      //   width: res_width * 0.23,
+                      // ),
+                      Padding(
+                        padding: EdgeInsets.only(left: res_width * 0.12),
+                        child: Image.asset(
+                          "assets/slicing/Untitled-63.png",
+                          width: res_width * 0.025,
+                        ),
                       ),
                     ],
                   ),
@@ -161,12 +163,12 @@ class payment extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 13),
                       ),
-                      SizedBox(
-                        width: res_width * 0.23,
-                      ),
-                      Image.asset(
-                        "assets/slicing/Untitled-63.png",
-                        width: res_width * 0.025,
+                      Padding(
+                        padding: EdgeInsets.only(left: res_width * 0.12),
+                        child: Image.asset(
+                          "assets/slicing/Untitled-63.png",
+                          width: res_width * 0.025,
+                        ),
                       ),
                     ],
                   ),
@@ -176,7 +178,9 @@ class payment extends StatelessWidget {
                 height: res_height * 0.01,
               ),
               GestureDetector(
-                onTap: (){Get.to(() => WireTransfer());},
+                onTap: () {
+                  Get.to(() => WireTransfer());
+                },
                 child: Container(
                   width: res_width * 0.95,
                   decoration: BoxDecoration(
@@ -185,7 +189,7 @@ class payment extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(13.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         // Image.asset(
                         //   "assets/slicing/Untitled-55.png",
@@ -202,7 +206,7 @@ class payment extends StatelessWidget {
                           width: res_width * 0.23,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(right: 8.0),
+                          padding: EdgeInsets.only(left: res_width * 0.32),
                           child: Image.asset(
                             "assets/slicing/Untitled-63.png",
                             width: res_width * 0.025,
