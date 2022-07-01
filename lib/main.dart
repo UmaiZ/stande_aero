@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:stande_aero/screens/auth/mainlogin.dart';
+import 'package:stande_aero/screens/lease%20Form/lease_form.dart';
+import 'package:stande_aero/screens/lease%20Form/lease_form2.dart';
 import 'package:stande_aero/screens/payment/payment.dart';
 
 void main() {

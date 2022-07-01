@@ -40,6 +40,7 @@ dev_dependencies:
   carousel_slider: ^4.1.1
   flutter_test:
     sdk: flutter
+  intl: ^0.17.0
   table_calendar: ^3.0.6
   
 

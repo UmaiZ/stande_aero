@@ -7,6 +7,8 @@ import 'package:stande_aero/screens/booking/booking.dart';
 import 'package:stande_aero/screens/credit_Form/credit_form.dart';
 import 'package:stande_aero/screens/home/drawer.dart';
 import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
+import 'package:stande_aero/screens/lease%20Form/lease_form.dart';
+import 'package:stande_aero/screens/lease%20Form/lease_form2.dart';
 // import 'package:stande_aero/screens/home/Profile/editprofile.dart';
 // import 'package:stande_aero/screens/home/Profile/profile.dart';
 
@@ -39,6 +41,7 @@ class HomeScreen extends StatelessWidget {
           leading: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () {
+              Get.to(lease_Form());
               _key.currentState!.openDrawer();
             },
             child: Padding(
