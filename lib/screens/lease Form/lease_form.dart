@@ -18,13 +18,12 @@ class lease_Form extends StatelessWidget {
         leading: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () {
+            Get.back();
             // _key.currentState!.openDrawer();
           },
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-                width: 25,
-                child: Image.asset('assets/slicing/Untitled-44.png')),
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.grey,
           ),
         ),
         title: Row(

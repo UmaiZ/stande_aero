@@ -46,8 +46,8 @@ class _MainScreenState extends State<MainScreen> {
                     BottomNavigationBarItem(
                       icon: ImageIcon(
                         bottomctrl.navigationBarIndexValue == 0
-                            ? AssetImage("assets/slicing/Untitled-47.png")
-                            : AssetImage("assets/slicing/Untitled-16.png"),
+                            ? AssetImage("assets/slicing/Untitled-15.png")
+                            : AssetImage("assets/slicing/Untitled-15.png"),
                       ),
                       label: '',
                     ),
@@ -62,16 +62,16 @@ class _MainScreenState extends State<MainScreen> {
                     BottomNavigationBarItem(
                       icon: ImageIcon(
                         bottomctrl.navigationBarIndexValue == 2
-                            ? AssetImage("assets/slicing/Untitled-47.png")
-                            : AssetImage("assets/slicing/Untitled-16.png"),
+                            ? AssetImage("assets/slicing/Untitled-53.png")
+                            : AssetImage("assets/slicing/Untitled-48.png"),
                       ),
                       label: '',
                     ),
                     BottomNavigationBarItem(
                       icon: ImageIcon(
                         bottomctrl.navigationBarIndexValue == 3
-                            ? AssetImage("assets/slicing/Untitled-47.png")
-                            : AssetImage("assets/slicing/Untitled-16.png"),
+                            ? AssetImage("assets/slicing/Untitled-35.png")
+                            : AssetImage("assets/slicing/Untitled-50.png"),
                       ),
                       label: '',
                     ),

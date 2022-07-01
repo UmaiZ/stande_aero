@@ -41,6 +41,20 @@ class _profileState extends State<profile> {
                 child: Image.asset('assets/slicing/Untitled-44.png')),
           ),
         ),
+        actions: [
+          GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              Get.to(() => Editprofile());
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                  width: 25,
+                  child: Image.asset('assets/slicing/Untitled-45.png')),
+            ),
+          )
+        ],
         // leading: GestureDetector(
         //   behavior: HitTestBehavior.translucent,
         //   onTap: () {

@@ -80,407 +80,410 @@ class _OrderStatusState extends State<OrderStatus> {
         ),
         body: Container(
           width: double.infinity,
-          child: Column(
-            children: [
-              Quotes_Card(
-                MODEL: "CF34-10 DAE",
-                location: "Miami, Florida",
-                description:
-                    "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
-              ),
-              SizedBox(
-                height: res_height * 0.03,
-              ),
-
-              Container(
-                width: res_width * 0.9,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                            width: 35,
-                            child:
-                                Image.asset('assets/slicing/Untitled-58.png')),
-                        Divider(
-                          height: res_height * 0.095,
-                        ),
-                        Container(
-                            width: 35,
-                            child:
-                                Image.asset('assets/slicing/Untitled-59.png')),
-                        Divider(
-                          height: res_height * 0.095,
-                        ),
-                        Container(
-                            width: 35,
-                            child:
-                                Image.asset('assets/slicing/Untitled-60.png')),
-                        Divider(
-                          height: res_height * 0.095,
-                        ),
-                        Container(
-                            width: 35,
-                            child:
-                                Image.asset('assets/slicing/Untitled-61.png'))
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Get.to(() => OrderStatusDetail(type: "Progress"));
-                          },
-                          child: Row(
-                            children: [
-                              Container(
-                                width: res_width * 0.75,
-                                decoration: BoxDecoration(color: Colors.white),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Order In Progress',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            height: res_height * 0.006,
-                                          ),
-                                          Container(
-                                              width: res_width * 0.6,
-                                              child: Text(
-                                                  'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-                                                  style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 12,
-                                                  )))
-                                        ],
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: res_height * 0.05,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Get.to(() => OrderStatusDetail(
-                                  type: "Shipped",
-                                ));
-                          },
-                          child: Row(
-                            children: [
-                              Container(
-                                width: res_width * 0.75,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffc2c2c2)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Order Shipped',
-                                            style: TextStyle(
-                                                color: Colors.grey[600],
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            height: res_height * 0.006,
-                                          ),
-                                          Container(
-                                              width: res_width * 0.6,
-                                              child: Text(
-                                                  'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-                                                  style: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontSize: 12,
-                                                  )))
-                                        ],
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: res_height * 0.05,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Get.to(() => OrderStatusDetail(
-                                  type: "Route",
-                                ));
-                          },
-                          child: Row(
-                            children: [
-                              Container(
-                                width: res_width * 0.75,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffc2c2c2)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Order In Route',
-                                            style: TextStyle(
-                                                color: Colors.grey[600],
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            height: res_height * 0.006,
-                                          ),
-                                          Container(
-                                              width: res_width * 0.6,
-                                              child: Text(
-                                                  'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-                                                  style: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontSize: 12,
-                                                  )))
-                                        ],
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: res_height * 0.05,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Get.to(() => OrderStatusDetail(
-                                  type: "Arrived",
-                                ));
-                          },
-                          child: Row(
-                            children: [
-                              Container(
-                                width: res_width * 0.75,
-                                decoration:
-                                    BoxDecoration(color: Color(0xffc2c2c2)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Order Arrived',
-                                            style: TextStyle(
-                                                color: Colors.grey[600],
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            height: res_height * 0.006,
-                                          ),
-                                          Container(
-                                              width: res_width * 0.6,
-                                              child: Text(
-                                                  'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-                                                  style: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontSize: 12,
-                                                  )))
-                                        ],
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Quotes_Card(
+                  MODEL: "CF34-10 DAE",
+                  location: "Miami, Florida",
+                  description:
+                      "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
                 ),
-              ),
-              SizedBox(
-                height: res_height * 0.02,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.to(() => MainScreen());
-                },
-                child: Container(
-                  width: res_width * 0.95,
-                  decoration: BoxDecoration(
-                      color: Color(0xffaf8a39),
-                      borderRadius: BorderRadius.all(Radius.circular(7))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(13.0),
-                    child: Center(
-                      child: Text(
-                        'Done',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
+                SizedBox(
+                  height: res_height * 0.03,
+                ),
+
+                Container(
+                  width: res_width * 0.9,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                              width: 35,
+                              child: Image.asset(
+                                  'assets/slicing/Untitled-58.png')),
+                          Divider(
+                            height: res_height * 0.095,
+                          ),
+                          Container(
+                              width: 35,
+                              child: Image.asset(
+                                  'assets/slicing/Untitled-59.png')),
+                          Divider(
+                            height: res_height * 0.095,
+                          ),
+                          Container(
+                              width: 35,
+                              child: Image.asset(
+                                  'assets/slicing/Untitled-60.png')),
+                          Divider(
+                            height: res_height * 0.095,
+                          ),
+                          Container(
+                              width: 35,
+                              child:
+                                  Image.asset('assets/slicing/Untitled-61.png'))
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(() => OrderStatusDetail(type: "Progress"));
+                            },
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: res_width * 0.75,
+                                  decoration:
+                                      BoxDecoration(color: Colors.white),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Order In Progress',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: res_height * 0.006,
+                                            ),
+                                            Container(
+                                                width: res_width * 0.6,
+                                                child: Text(
+                                                    'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                                                    style: TextStyle(
+                                                      color: Colors.grey,
+                                                      fontSize: 12,
+                                                    )))
+                                          ],
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.grey,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: res_height * 0.05,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(() => OrderStatusDetail(
+                                    type: "Shipped",
+                                  ));
+                            },
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: res_width * 0.75,
+                                  decoration:
+                                      BoxDecoration(color: Color(0xffc2c2c2)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Order Shipped',
+                                              style: TextStyle(
+                                                  color: Colors.grey[600],
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: res_height * 0.006,
+                                            ),
+                                            Container(
+                                                width: res_width * 0.6,
+                                                child: Text(
+                                                    'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                                                    style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontSize: 12,
+                                                    )))
+                                          ],
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.grey,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: res_height * 0.05,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(() => OrderStatusDetail(
+                                    type: "Route",
+                                  ));
+                            },
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: res_width * 0.75,
+                                  decoration:
+                                      BoxDecoration(color: Color(0xffc2c2c2)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Order In Route',
+                                              style: TextStyle(
+                                                  color: Colors.grey[600],
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: res_height * 0.006,
+                                            ),
+                                            Container(
+                                                width: res_width * 0.6,
+                                                child: Text(
+                                                    'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                                                    style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontSize: 12,
+                                                    )))
+                                          ],
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.grey,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: res_height * 0.05,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(() => OrderStatusDetail(
+                                    type: "Arrived",
+                                  ));
+                            },
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: res_width * 0.75,
+                                  decoration:
+                                      BoxDecoration(color: Color(0xffc2c2c2)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Order Arrived',
+                                              style: TextStyle(
+                                                  color: Colors.grey[600],
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: res_height * 0.006,
+                                            ),
+                                            Container(
+                                                width: res_width * 0.6,
+                                                child: Text(
+                                                    'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                                                    style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontSize: 12,
+                                                    )))
+                                          ],
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.grey,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: res_height * 0.02,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => MainScreen());
+                  },
+                  child: Container(
+                    width: res_width * 0.95,
+                    decoration: BoxDecoration(
+                        color: Color(0xffaf8a39),
+                        borderRadius: BorderRadius.all(Radius.circular(7))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(13.0),
+                      child: Center(
+                        child: Text(
+                          'Done',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
 
-              // Stepper(
-              //     // type: stepperType,
+                // Stepper(
+                //     // type: stepperType,
 
-              //     physics: ScrollPhysics(),
-              //     currentStep: _currentStep,
-              //     onStepTapped: (step) => tapped(step),
-              //     onStepContinue: continued,
-              //     onStepCancel: cancel,
-              //     controlsBuilder: (context, _) {
-              //       return SizedBox();
-              //     },
-              //     steps: <Step>[
-              //       Step(
-              //         title: SizedBox(
-              //           child: Column(
-              //             children: <Widget>[
-              //               Container(
-              //                 width: res_width * 0.75,
-              //                 decoration: BoxDecoration(color: Colors.white),
-              //                 child: Padding(
-              //                   padding: const EdgeInsets.all(12.0),
-              //                   child: Row(
-              //                     children: [
-              //                       Column(
-              //                         crossAxisAlignment:
-              //                             CrossAxisAlignment.start,
-              //                         children: [
-              //                           Text(
-              //                             'Order In Progress',
-              //                             style: TextStyle(
-              //                                 fontWeight: FontWeight.bold),
-              //                           ),
-              //                           SizedBox(
-              //                             height: res_height * 0.006,
-              //                           ),
-              //                           Container(
-              //                               width: res_width * 0.6,
-              //                               child: Text(
-              //                                   'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-              //                                   style: TextStyle(
-              //                                     color: Colors.grey,
-              //                                     fontSize: 12,
-              //                                   )))
-              //                         ],
-              //                       ),
-              //                       Icon(
-              //                         Icons.arrow_forward_ios,
-              //                         color: Colors.grey,
-              //                       )
-              //                     ],
-              //                   ),
-              //                 ),
-              //               )
+                //     physics: ScrollPhysics(),
+                //     currentStep: _currentStep,
+                //     onStepTapped: (step) => tapped(step),
+                //     onStepContinue: continued,
+                //     onStepCancel: cancel,
+                //     controlsBuilder: (context, _) {
+                //       return SizedBox();
+                //     },
+                //     steps: <Step>[
+                //       Step(
+                //         title: SizedBox(
+                //           child: Column(
+                //             children: <Widget>[
+                //               Container(
+                //                 width: res_width * 0.75,
+                //                 decoration: BoxDecoration(color: Colors.white),
+                //                 child: Padding(
+                //                   padding: const EdgeInsets.all(12.0),
+                //                   child: Row(
+                //                     children: [
+                //                       Column(
+                //                         crossAxisAlignment:
+                //                             CrossAxisAlignment.start,
+                //                         children: [
+                //                           Text(
+                //                             'Order In Progress',
+                //                             style: TextStyle(
+                //                                 fontWeight: FontWeight.bold),
+                //                           ),
+                //                           SizedBox(
+                //                             height: res_height * 0.006,
+                //                           ),
+                //                           Container(
+                //                               width: res_width * 0.6,
+                //                               child: Text(
+                //                                   'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                //                                   style: TextStyle(
+                //                                     color: Colors.grey,
+                //                                     fontSize: 12,
+                //                                   )))
+                //                         ],
+                //                       ),
+                //                       Icon(
+                //                         Icons.arrow_forward_ios,
+                //                         color: Colors.grey,
+                //                       )
+                //                     ],
+                //                   ),
+                //                 ),
+                //               )
 
-              //             ],
-              //           ),
-              //         ),
-              //         content: SizedBox(
-              //           width: 0.0,
-              //           height: 0.0,
-              //         ),
-              //         isActive: _currentStep >= 0,
-              //         state: _currentStep >= 0
-              //             ? StepState.complete
-              //             : StepState.disabled,
-              //       ),
-              //       Step(
-              //         title: new Text(''),
-              //         content: Column(
-              //           children: <Widget>[
-              //             Container(
-              //               width: res_width * 0.75,
-              //               decoration: BoxDecoration(color: Colors.white),
-              //               child: Padding(
-              //                 padding: const EdgeInsets.all(12.0),
-              //                 child: Row(
-              //                   children: [
-              //                     Column(
-              //                       crossAxisAlignment:
-              //                           CrossAxisAlignment.start,
-              //                       children: [
-              //                         Text(
-              //                           'Order In Progress',
-              //                           style: TextStyle(
-              //                               fontWeight: FontWeight.bold),
-              //                         ),
-              //                         SizedBox(
-              //                           height: res_height * 0.006,
-              //                         ),
-              //                         Container(
-              //                             width: res_width * 0.6,
-              //                             child: Text(
-              //                                 'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
-              //                                 style: TextStyle(
-              //                                   color: Colors.grey,
-              //                                   fontSize: 12,
-              //                                 )))
-              //                       ],
-              //                     ),
-              //                     Icon(
-              //                       Icons.arrow_forward_ios,
-              //                       color: Colors.grey,
-              //                     )
-              //                   ],
-              //                 ),
-              //               ),
-              //             )
-              //           ],
-              //         ),
-              //         isActive: _currentStep >= 0,
-              //         state: _currentStep >= 0
-              //             ? StepState.complete
-              //             : StepState.disabled,
-              //       ),
-              //     ])
-            ],
+                //             ],
+                //           ),
+                //         ),
+                //         content: SizedBox(
+                //           width: 0.0,
+                //           height: 0.0,
+                //         ),
+                //         isActive: _currentStep >= 0,
+                //         state: _currentStep >= 0
+                //             ? StepState.complete
+                //             : StepState.disabled,
+                //       ),
+                //       Step(
+                //         title: new Text(''),
+                //         content: Column(
+                //           children: <Widget>[
+                //             Container(
+                //               width: res_width * 0.75,
+                //               decoration: BoxDecoration(color: Colors.white),
+                //               child: Padding(
+                //                 padding: const EdgeInsets.all(12.0),
+                //                 child: Row(
+                //                   children: [
+                //                     Column(
+                //                       crossAxisAlignment:
+                //                           CrossAxisAlignment.start,
+                //                       children: [
+                //                         Text(
+                //                           'Order In Progress',
+                //                           style: TextStyle(
+                //                               fontWeight: FontWeight.bold),
+                //                         ),
+                //                         SizedBox(
+                //                           height: res_height * 0.006,
+                //                         ),
+                //                         Container(
+                //                             width: res_width * 0.6,
+                //                             child: Text(
+                //                                 'Lorem ipsum dolor sit amet consectetur adipiscing elit estmaecenas aenean',
+                //                                 style: TextStyle(
+                //                                   color: Colors.grey,
+                //                                   fontSize: 12,
+                //                                 )))
+                //                       ],
+                //                     ),
+                //                     Icon(
+                //                       Icons.arrow_forward_ios,
+                //                       color: Colors.grey,
+                //                     )
+                //                   ],
+                //                 ),
+                //               ),
+                //             )
+                //           ],
+                //         ),
+                //         isActive: _currentStep >= 0,
+                //         state: _currentStep >= 0
+                //             ? StepState.complete
+                //             : StepState.disabled,
+                //       ),
+                //     ])
+              ],
+            ),
           ),
         ),
       ),
@@ -518,7 +521,7 @@ class Quotes_Card extends StatelessWidget {
                       Text(
                         "$MODEL",
                         style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w500),
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
                         height: res_height * 0.006,
@@ -528,11 +531,11 @@ class Quotes_Card extends StatelessWidget {
                           Text(
                             "Location: ",
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "$location",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ],
                       ),
@@ -541,7 +544,7 @@ class Quotes_Card extends StatelessWidget {
                       ),
                       Text(
                         "$description",
-                        style: TextStyle(fontSize: 9),
+                        style: TextStyle(fontSize: 10),
                       ),
                     ],
                   ),

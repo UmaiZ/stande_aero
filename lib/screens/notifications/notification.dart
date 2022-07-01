@@ -116,14 +116,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
           children: [
             Text(
               'Risus ad magnis rutrum',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
             ),
             SizedBox(
               height: res_height * 0.005,
             ),
             Text(
               'Lorem ipsum dolor sit ametconsectetur adipiscing elit. Consectetur adipiscing elit.',
-              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 13, color: Colors.grey[600]),
             ),
           ],
         ),

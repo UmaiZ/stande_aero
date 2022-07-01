@@ -142,7 +142,11 @@ class quotes_details extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.grey,
                         borderRadius: BorderRadius.all(Radius.circular(7))),
-                    child: TextField(),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: res_height * 0.01,
@@ -171,8 +175,10 @@ class quotes_details extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.only(left: 8.0),
                             child: TextField(
-                              decoration:
-                                  InputDecoration(hintText: "Start Date"),
+                              decoration: InputDecoration(
+                                hintText: "Start Date",
+                                border: InputBorder.none,
+                              ),
                               keyboardType: TextInputType.datetime,
                             ),
                           ),
@@ -186,7 +192,10 @@ class quotes_details extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.only(left: 8.0),
                             child: TextField(
-                              decoration: InputDecoration(hintText: "End Date"),
+                              decoration: InputDecoration(
+                                hintText: "End Date",
+                                border: InputBorder.none,
+                              ),
                               keyboardType: TextInputType.datetime,
                             ),
                           ),
@@ -223,7 +232,7 @@ class quotes_details extends StatelessWidget {
                       padding: const EdgeInsets.all(13.0),
                       child: Center(
                         child: Text(
-                          "500",
+                          "\$500",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -254,7 +263,7 @@ class quotes_details extends StatelessWidget {
                       padding: const EdgeInsets.all(13.0),
                       child: Center(
                         child: Text(
-                          "4500",
+                          "\$4500",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -267,7 +276,7 @@ class quotes_details extends StatelessWidget {
                     height: res_height * 0.02,
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.to(() => payment());
                     },
                     child: Container(

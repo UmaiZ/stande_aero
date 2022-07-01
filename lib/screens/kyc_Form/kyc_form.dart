@@ -377,6 +377,9 @@ class textfiel_kyc extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(7))),
       child: TextField(
         maxLines: maxLines,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+        ),
       ),
     );
   }

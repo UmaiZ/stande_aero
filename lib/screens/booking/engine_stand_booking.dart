@@ -124,7 +124,9 @@ class stand_booking extends StatelessWidget {
                             width: res_width / 2.4,
                             decoration: BoxDecoration(color: Colors.grey),
                             child: TextField(
-                              decoration: InputDecoration(hintText: "22/5/22"),
+                              decoration: InputDecoration(
+                                  hintText: "22/5/22",
+                                  contentPadding: EdgeInsets.only(left: 10)),
                               keyboardType: TextInputType.datetime,
                             ),
                           )
@@ -142,7 +144,9 @@ class stand_booking extends StatelessWidget {
                             width: res_width / 2.4,
                             decoration: BoxDecoration(color: Colors.grey),
                             child: TextField(
-                              decoration: InputDecoration(hintText: "22/5/22"),
+                              decoration: InputDecoration(
+                                  hintText: "22/5/22",
+                                  contentPadding: EdgeInsets.only(left: 10)),
                               keyboardType: TextInputType.datetime,
                             ),
                           )

@@ -150,7 +150,7 @@ class Quotes_Card extends StatelessWidget {
                         Text(
                           "$MODEL",
                           style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w500),
+                              fontSize: 15, fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: res_height * 0.006,
@@ -160,11 +160,11 @@ class Quotes_Card extends StatelessWidget {
                             Text(
                               "Location: ",
                               style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
+                                  fontSize: 13, fontWeight: FontWeight.bold),
                             ),
                             Text(
                               "$location",
-                              style: TextStyle(fontSize: 12),
+                              style: TextStyle(fontSize: 13),
                             ),
                           ],
                         ),
@@ -173,7 +173,7 @@ class Quotes_Card extends StatelessWidget {
                         ),
                         Text(
                           "$description",
-                          style: TextStyle(fontSize: 9),
+                          style: TextStyle(fontSize: 10),
                         ),
                       ],
                     ),
