@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stande_aero/screens/List%20Quotes/list_of_Quote_details.dart';
+import 'package:stande_aero/screens/home/drawer.dart';
 
-class quotes extends StatelessWidget {
+class quotes extends StatefulWidget {
   const quotes({Key? key}) : super(key: key);
+
+  @override
+  State<quotes> createState() => _quotesState();
+}
+
+class _quotesState extends State<quotes> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +19,9 @@ class quotes extends StatelessWidget {
     double res_height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      key: _key,
+      drawer: NavDrawer(),
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
@@ -19,8 +30,7 @@ class quotes extends StatelessWidget {
         leading: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () {
-            // Get.to(profile());
-            // _key.currentState!.openDrawer();
+            _key.currentState!.openDrawer();
           },
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -29,6 +39,21 @@ class quotes extends StatelessWidget {
                 child: Image.asset('assets/slicing/Untitled-44.png')),
           ),
         ),
+        // leading: GestureDetector(
+        //   behavior: HitTestBehavior.translucent,
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //     // _key.currentState!.openDrawer();
+        //   },
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(15),
+        //     child: Container(
+        //         width: 25,
+        //         child: Image.asset(
+        //           'assets/slicing/Untitled-3.png',
+        //         )),
+        //   ),
+        // ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,21 +68,6 @@ class quotes extends StatelessWidget {
                     fit: BoxFit.cover)),
           ],
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                // Get.to(Editprofile());
-              },
-              child: Container(
-                  width: 20,
-                  height: 20,
-                  child: Image.asset('assets/slicing/Untitled-52.png',
-                      fit: BoxFit.contain)),
-            ),
-          ),
-        ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(

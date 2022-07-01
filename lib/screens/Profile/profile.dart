@@ -3,16 +3,27 @@ import 'package:get/get.dart';
 import 'package:stande_aero/helper/colors.dart';
 import 'package:stande_aero/screens/Profile/editprofile.dart';
 import 'package:stande_aero/screens/auth/mainlogin.dart';
+import 'package:stande_aero/screens/home/drawer.dart';
 // import 'package:stande_aero/screens/home/Profile/editprofile.dart';
 
-class profile extends StatelessWidget {
+class profile extends StatefulWidget {
   const profile({Key? key}) : super(key: key);
+
+  @override
+  State<profile> createState() => _profileState();
+}
+
+class _profileState extends State<profile> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     double res_width = MediaQuery.of(context).size.width;
     double res_height = MediaQuery.of(context).size.height;
     return Scaffold(
+      key: _key,
+      drawer: NavDrawer(),
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
@@ -21,8 +32,7 @@ class profile extends StatelessWidget {
         leading: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () {
-            // Get.to(profile());
-            // _key.currentState!.openDrawer();
+            _key.currentState!.openDrawer();
           },
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -31,6 +41,21 @@ class profile extends StatelessWidget {
                 child: Image.asset('assets/slicing/Untitled-44.png')),
           ),
         ),
+        // leading: GestureDetector(
+        //   behavior: HitTestBehavior.translucent,
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //     // _key.currentState!.openDrawer();
+        //   },
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(15),
+        //     child: Container(
+        //         width: 25,
+        //         child: Image.asset(
+        //           'assets/slicing/Untitled-3.png',
+        //         )),
+        //   ),
+        // ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -45,26 +70,11 @@ class profile extends StatelessWidget {
                     fit: BoxFit.cover)),
           ],
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                Get.to(Editprofile());
-              },
-              child: Container(
-                  width: 30,
-                  height: 20,
-                  child: Image.asset('assets/slicing/Untitled-45.png',
-                      fit: BoxFit.contain)),
-            ),
-          ),
-        ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(
         width: double.infinity,
-        // height:  double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/slicing/Untitled-46.jpg"),

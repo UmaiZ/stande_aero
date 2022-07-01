@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:stande_aero/screens/home/drawer.dart';
 import 'package:stande_aero/screens/mainhome.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     double res_width = MediaQuery.of(context).size.width;
     double res_height = MediaQuery.of(context).size.height;
+    final GlobalKey<ScaffoldState> _key = GlobalKey();
 
     return Container(
       width: double.infinity,
@@ -27,12 +29,26 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ),
       ),
       child: Scaffold(
+        key: _key,
+        drawer: NavDrawer(),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
+          leading: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              _key.currentState!.openDrawer();
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                  width: 25,
+                  child: Image.asset('assets/slicing/Untitled-44.png')),
+            ),
+          ),
           // leading: GestureDetector(
           //   behavior: HitTestBehavior.translucent,
           //   onTap: () {
