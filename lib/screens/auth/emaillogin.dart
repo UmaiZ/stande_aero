@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stande_aero/helper/colors.dart';
+import 'package:stande_aero/screens/auth/register.dart';
 import 'package:stande_aero/screens/home/home.dart';
 import 'package:stande_aero/screens/mainhome.dart';
+import 'package:stande_aero/screens/payment/awaiting.dart';
 
 class EmailLoginScreen extends StatelessWidget {
   const EmailLoginScreen({Key? key}) : super(key: key);
@@ -100,7 +102,7 @@ class EmailLoginScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(() => MainScreen());
+                Get.to(() => AwaitingConfirm());
               },
               child: Container(
                 width: res_width * 0.9,
@@ -136,27 +138,32 @@ class EmailLoginScreen extends StatelessWidget {
             SizedBox(
               height: res_height * 0.13,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account? ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                    fontSize: 17,
+            GestureDetector(
+              onTap: () {
+                Get.to(() => RegisterScreen());
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account? ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-                Text(
-                  'Signup',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w500,
-                    color: kPrimaryColor,
-                    fontSize: 17,
+                  Text(
+                    'Signup',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.w500,
+                      color: kPrimaryColor,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             )
           ],
         ),

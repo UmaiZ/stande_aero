@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:stande_aero/bottomcontroller.dart';
 import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
+import 'package:stande_aero/screens/mainhome.dart';
 
-class credit_form2 extends StatelessWidget {
-  const credit_form2({Key? key}) : super(key: key);
+class credit_from2 extends StatefulWidget {
+  const credit_from2({Key? key}) : super(key: key);
+
+  @override
+  State<credit_from2> createState() => _credit_from2State();
+}
+
+class _credit_from2State extends State<credit_from2> {
+  final bottomctrl = Get.put(BottomController());
 
   @override
   Widget build(BuildContext context) {
@@ -160,20 +170,22 @@ class credit_form2 extends StatelessWidget {
                     height: res_height * 0.02,
                   ),
 
-                  Container(
-                    width: res_width * 0.925,
-                    decoration: BoxDecoration(
-                        color: Color(0xffaf8a39),
-                        borderRadius: BorderRadius.all(Radius.circular(7))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(13.0),
-                      child: Center(
-                        child: Text(
-                          'Add Another',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
+                  GestureDetector(
+                    child: Container(
+                      width: res_width * 0.925,
+                      decoration: BoxDecoration(
+                          color: Color(0xffaf8a39),
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Center(
+                          child: Text(
+                            'Add Another',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
                         ),
                       ),
                     ),
@@ -350,20 +362,26 @@ class credit_form2 extends StatelessWidget {
                     height: res_height * 0.02,
                   ),
 
-                  Container(
-                    width: res_width * 0.925,
-                    decoration: BoxDecoration(
-                        color: Color(0xffaf8a39),
-                        borderRadius: BorderRadius.all(Radius.circular(7))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(13.0),
-                      child: Center(
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
+                  GestureDetector(
+                    onTap: () {
+                      bottomctrl.navBarChange(2);
+                      Get.to(() => MainScreen());
+                    },
+                    child: Container(
+                      width: res_width * 0.925,
+                      decoration: BoxDecoration(
+                          color: Color(0xffaf8a39),
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Center(
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
                         ),
                       ),
                     ),

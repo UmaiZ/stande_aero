@@ -7,6 +7,7 @@ import 'package:stande_aero/screens/home/privacy.dart';
 import 'package:stande_aero/screens/home/terms.dart';
 import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
 import 'package:stande_aero/screens/lease%20Form/lease_form.dart';
+import 'package:stande_aero/screens/notifications/chat.dart';
 import 'package:stande_aero/screens/taxcertificate/taxcertificate.dart';
 
 class NavDrawer extends StatefulWidget {
@@ -185,46 +186,48 @@ class _NavDrawerState extends State<NavDrawer> {
                   ),
                 ),
               ),
+              // GestureDetector(
+              //   behavior: HitTestBehavior.translucent,
+              //   onTap: () {
+              //     if (bottomctrl.navigationBarIndexValue != 3) {
+              //       bottomctrl.navBarChange(3);
+              //     } else {
+              //       Navigator.pop(context);
+              //     }
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 13, right: 13),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             IconButton(
+              //               icon: Padding(
+              //                 padding: const EdgeInsets.all(7.0),
+              //                 child:
+              //                     Image.asset("assets/slicing/Untitled-17.png"),
+              //               ),
+              //               onPressed: () {},
+              //             ),
+              //             Text(
+              //               'Payment History',
+              //               style: TextStyle(fontSize: 15, color: Colors.white),
+              //             )
+              //           ],
+              //         ),
+              //         Container(
+              //           height: 1,
+              //           color: Colors.grey.withOpacity(0.2),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
               GestureDetector(
                 behavior: HitTestBehavior.translucent,
                 onTap: () {
-                  if (bottomctrl.navigationBarIndexValue != 3) {
-                    bottomctrl.navBarChange(3);
-                  } else {
-                    Navigator.pop(context);
-                  }
+                  Get.to(() => ChatScreen());
                 },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 13, right: 13),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child:
-                                  Image.asset("assets/slicing/Untitled-17.png"),
-                            ),
-                            onPressed: () {},
-                          ),
-                          Text(
-                            'Payment History',
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          )
-                        ],
-                      ),
-                      Container(
-                        height: 1,
-                        color: Colors.grey.withOpacity(0.2),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {},
                 child: Padding(
                   padding: const EdgeInsets.only(left: 13, right: 13),
                   child: Column(
@@ -385,105 +388,106 @@ class _NavDrawerState extends State<NavDrawer> {
                   ),
                 ),
               ),
-              GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  Get.to(() => lease_Form());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 13, right: 13),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child:
-                                  Image.asset("assets/slicing/Untitled-18.png"),
-                            ),
-                            onPressed: () {},
-                          ),
-                          Text(
-                            'Lease Form',
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          )
-                        ],
-                      ),
-                      Container(
-                        height: 1,
-                        color: Colors.grey.withOpacity(0.2),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  Get.to(() => credit_form());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 13, right: 13),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child:
-                                  Image.asset("assets/slicing/Untitled-18.png"),
-                            ),
-                            onPressed: () {},
-                          ),
-                          Text(
-                            'Credit Form',
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          )
-                        ],
-                      ),
-                      Container(
-                        height: 1,
-                        color: Colors.grey.withOpacity(0.2),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  Get.to(() => kyc_form());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 13, right: 13),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child:
-                                  Image.asset("assets/slicing/Untitled-18.png"),
-                            ),
-                            onPressed: () {},
-                          ),
-                          Text(
-                            'Kyc Form',
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          )
-                        ],
-                      ),
-                      Container(
-                        height: 1,
-                        color: Colors.grey.withOpacity(0.2),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   behavior: HitTestBehavior.translucent,
+              //   onTap: () {
+              //     Get.to(() => lease_Form());
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 13, right: 13),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             IconButton(
+              //               icon: Padding(
+              //                 padding: const EdgeInsets.all(7.0),
+              //                 child:
+              //                     Image.asset("assets/slicing/Untitled-18.png"),
+              //               ),
+              //               onPressed: () {},
+              //             ),
+              //             Text(
+              //               'Lease Form',
+              //               style: TextStyle(fontSize: 15, color: Colors.white),
+              //             )
+              //           ],
+              //         ),
+              //         Container(
+              //           height: 1,
+              //           color: Colors.grey.withOpacity(0.2),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // GestureDetector(
+              //   behavior: HitTestBehavior.translucent,
+              //   onTap: () {
+              //     Get.to(() => credit_form());
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 13, right: 13),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             IconButton(
+              //               icon: Padding(
+              //                 padding: const EdgeInsets.all(7.0),
+              //                 child:
+              //                     Image.asset("assets/slicing/Untitled-18.png"),
+              //               ),
+              //               onPressed: () {},
+              //             ),
+              //             Text(
+              //               'Credit Form',
+              //               style: TextStyle(fontSize: 15, color: Colors.white),
+              //             )
+              //           ],
+              //         ),
+              //         Container(
+              //           height: 1,
+              //           color: Colors.grey.withOpacity(0.2),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // GestureDetector(
+              //   behavior: HitTestBehavior.translucent,
+              //   onTap: () {
+              //     Get.to(() => kyc_form());
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 13, right: 13),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             IconButton(
+              //               icon: Padding(
+              //                 padding: const EdgeInsets.all(7.0),
+              //                 child:
+              //                     Image.asset("assets/slicing/Untitled-18.png"),
+              //               ),
+              //               onPressed: () {},
+              //             ),
+              //             Text(
+              //               'Kyc Form',
+              //               style: TextStyle(fontSize: 15, color: Colors.white),
+              //             )
+              //           ],
+              //         ),
+              //         Container(
+              //           height: 1,
+              //           color: Colors.grey.withOpacity(0.2),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+
               SizedBox(
                 height: res_height * 0.02,
               )

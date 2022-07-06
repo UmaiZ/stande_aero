@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:stande_aero/screens/auth/mainlogin.dart';
 import 'package:stande_aero/screens/payment/awaiting.dart';
 
 class WireTransfer extends StatefulWidget {
@@ -81,8 +82,10 @@ class _WireTransferState extends State<WireTransfer> {
                   height: res_height * 0.01,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Get.to(() => AwaitingConfirm());
+                  onTap: () {
+                    print('asdasd');
+                    Get.to(() => MainLoginScreen());
+                    // Get.to(() => AwaitingConfirm());
                   },
                   child: Container(
                     width: res_width * 0.9,

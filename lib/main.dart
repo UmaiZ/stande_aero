@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:stande_aero/screens/auth/mainlogin.dart';
 import 'package:stande_aero/screens/lease%20Form/lease_form.dart';
 import 'package:stande_aero/screens/lease%20Form/lease_form2.dart';
+import 'package:stande_aero/screens/mainhome.dart';
 import 'package:stande_aero/screens/payment/payment.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   start() {
-    Timer(Duration(seconds: 3), () => Get.to(() => MainLoginScreen()));
+    Timer(Duration(seconds: 3), () => Get.to(() => MainScreen()));
   }
 
   @override

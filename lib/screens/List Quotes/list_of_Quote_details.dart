@@ -12,54 +12,62 @@ class quotes_details extends StatelessWidget {
     double res_height = MediaQuery.of(context).size.height;
     double pad = 23.0;
 
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        leading: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onTap: () {
-            Navigator.pop(context);
-            // _key.currentState!.openDrawer();
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-                width: 25,
-                child: Image.asset(
-                  'assets/slicing/Untitled-3.png',
-                )),
-          ),
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Quote Details',
-              style: TextStyle(color: Colors.black),
-            ),
-            Container(
-                width: 40,
-                height: 40,
-                child: Image.asset('assets/slicing/Untitled-4.png',
-                    fit: BoxFit.cover)),
-          ],
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/slicing/Untitled-46.jpg"),
+          fit: BoxFit.cover,
         ),
       ),
-      extendBodyBehindAppBar: true,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/slicing/Untitled-46.jpg"),
-            fit: BoxFit.cover,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          leading: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              Navigator.pop(context);
+              // _key.currentState!.openDrawer();
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                  width: 25,
+                  child: Image.asset(
+                    'assets/slicing/Untitled-3.png',
+                  )),
+            ),
+          ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Quote Details',
+                style: TextStyle(color: Colors.black),
+              ),
+              Container(
+                  width: 40,
+                  height: 40,
+                  child: Image.asset('assets/slicing/Untitled-4.png',
+                      fit: BoxFit.cover)),
+            ],
           ),
         ),
-        child: SingleChildScrollView(
-          child: SafeArea(
+        // extendBodyBehindAppBar: true,
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage("assets/slicing/Untitled-46.jpg"),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: pad / 2),
               child: Column(

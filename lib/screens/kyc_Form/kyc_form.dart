@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stande_aero/screens/Profile/profile.dart';
+import 'package:stande_aero/screens/credit_Form/credit_form.dart';
 
 class kyc_form extends StatelessWidget {
   const kyc_form({Key? key}) : super(key: key);
@@ -14,21 +16,21 @@ class kyc_form extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onTap: () {
-            Navigator.pop(context);
-            // _key.currentState!.openDrawer();
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-                width: 25,
-                child: Image.asset(
-                  'assets/slicing/Untitled-3.png',
-                )),
-          ),
-        ),
+        // leading: GestureDetector(
+        //   behavior: HitTestBehavior.translucent,
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //     // _key.currentState!.openDrawer();
+        //   },
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(15),
+        //     child: Container(
+        //         width: 25,
+        //         child: Image.asset(
+        //           'assets/slicing/Untitled-3.png',
+        //         )),
+        //   ),
+        // ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -326,20 +328,25 @@ class kyc_form extends StatelessWidget {
                   SizedBox(
                     height: res_height * 0.02,
                   ),
-                  Container(
-                    width: res_width * 0.925,
-                    decoration: BoxDecoration(
-                        color: Color(0xffaf8a39),
-                        borderRadius: BorderRadius.all(Radius.circular(7))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(13.0),
-                      child: Center(
-                        child: Text(
-                          'Continue',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => credit_form());
+                    },
+                    child: Container(
+                      width: res_width * 0.925,
+                      decoration: BoxDecoration(
+                          color: Color(0xffaf8a39),
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Center(
+                          child: Text(
+                            'Continue',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
                         ),
                       ),
                     ),

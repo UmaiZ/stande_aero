@@ -15,21 +15,21 @@ class credit_form extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onTap: () {
-            Navigator.pop(context);
-            // _key.currentState!.openDrawer();
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-                width: 25,
-                child: Image.asset(
-                  'assets/slicing/Untitled-3.png',
-                )),
-          ),
-        ),
+        // leading: GestureDetector(
+        //   behavior: HitTestBehavior.translucent,
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //     // _key.currentState!.openDrawer();
+        //   },
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(15),
+        //     child: Container(
+        //         width: 25,
+        //         child: Image.asset(
+        //           'assets/slicing/Untitled-3.png',
+        //         )),
+        //   ),
+        // ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -280,7 +280,7 @@ class credit_form extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       print("object");
-                      Get.to(credit_form2());
+                      Get.to(() => credit_from2());
                     },
                     child: Container(
                       width: res_width * 0.925,
@@ -327,14 +327,22 @@ class textfiel_kyc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: res_width * 0.925,
-      decoration: BoxDecoration(
-          color: Colors.grey,
-          borderRadius: BorderRadius.all(Radius.circular(7))),
-      child: TextField(
-        maxLines: maxLines,
-      ),
+    return Column(
+      children: [
+        SizedBox(
+          height: 4,
+        ),
+        Container(
+          width: res_width * 0.925,
+          decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(Radius.circular(7))),
+          child: TextField(
+            maxLines: maxLines,
+            decoration: InputDecoration(border: InputBorder.none),
+          ),
+        ),
+      ],
     );
   }
 }
