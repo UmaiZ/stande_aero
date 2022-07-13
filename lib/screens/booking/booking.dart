@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:stande_aero/helper/colors.dart';
 import 'package:stande_aero/screens/booking/engine_stand_booking.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class booking extends StatefulWidget {
   const booking({Key? key}) : super(key: key);
@@ -22,12 +24,32 @@ class _bookingState extends State<booking> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
+  String _selectedDate = '';
+  String _dateCount = '';
+  String _range = '';
+  String _rangeCount = '';
   final kToday = DateTime.now();
   final kFirstDay = DateTime(
       DateTime.now().year, DateTime.now().month - 3, DateTime.now().day);
   final kLastDay = DateTime(
       DateTime.now().year, DateTime.now().month + 3, DateTime.now().day);
   double pad = 23.0;
+  void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
+    setState(() {
+      if (args.value is PickerDateRange) {
+        _range = '${DateFormat('dd/MM/yyyy').format(args.value.startDate)} -'
+            // ignore: lines_longer_than_80_chars
+            ' ${DateFormat('dd/MM/yyyy').format(args.value.endDate ?? args.value.startDate)}';
+      } else if (args.value is DateTime) {
+        _selectedDate = args.value.toString();
+      } else if (args.value is List<DateTime>) {
+        _dateCount = args.value.length.toString();
+      } else {
+        _rangeCount = args.value.length.toString();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double res_width = MediaQuery.of(context).size.width;
@@ -143,54 +165,83 @@ class _bookingState extends State<booking> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                       ),
-                      // height: 200,
-                      child: TableCalendar(
-                        // daysOfWeekVisible: false,
-                        firstDay: kFirstDay,
-                        lastDay: kLastDay,
-                        focusedDay: _focusedDay,
-                        selectedDayPredicate: (day) =>
-                            isSameDay(_selectedDay, day),
-                        rangeStartDay: _rangeStart,
-                        rangeEndDay: _rangeEnd,
-                        calendarFormat: _calendarFormat,
-                        rangeSelectionMode: _rangeSelectionMode,
+                      child: SfDateRangePicker(
+                        onSelectionChanged: _onSelectionChanged,
+                        selectionMode: DateRangePickerSelectionMode.range,
+                        // rangeTextStyle: TextStyle(color: Colors.red),
+                        // selectionTextStyle: TextStyle(color: Colors.red),
 
-                        calendarStyle: CalendarStyle(
-                            // cellPadding: EdgeInsets.all(1),
-                            todayDecoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(50)),
-                            selectedDecoration:
-                                BoxDecoration(color: kPrimaryColor)),
-
-                        headerStyle: HeaderStyle(
-                            formatButtonVisible: false,
-                            titleCentered: true,
-                            leftChevronIcon: CircleAvatar(
-                              backgroundColor: kPrimaryColor,
-                              child: Icon(
-                                Icons.chevron_left,
-                                color: Colors.white,
-                                size: 28,
-                              ),
-                            ),
-                            rightChevronIcon: CircleAvatar(
-                              backgroundColor: kPrimaryColor,
-                              child: Icon(
-                                Icons.chevron_right,
-                                color: Colors.white,
-                                size: 28,
-                              ),
-                            ),
-                            decoration: BoxDecoration(color: Colors.white)),
-                        // firstDay: DateTime.utc(2010, 10, 16),
-                        // lastDay: DateTime.utc(2030, 3, 14),
-                        // focusedDay: DateTime.now(),
+                        selectionColor: kPrimaryColor,
+                        rangeSelectionColor: kPrimaryColor.withOpacity(0.3),
+                        endRangeSelectionColor: kPrimaryColor,
+                        startRangeSelectionColor: kPrimaryColor,
+                        todayHighlightColor: kPrimaryColor,
+                        backgroundColor: Colors.white,
+                        // showTodayButton: false,
+                        initialSelectedRange: PickerDateRange(
+                            DateTime.now().subtract(const Duration(days: 4)),
+                            DateTime.now().add(const Duration(days: 3))),
                       ),
                     ),
                   ),
                 ),
+                // Padding(
+                //   padding: EdgeInsets.all(pad),
+                //   child: ClipRRect(
+                //     borderRadius: BorderRadius.circular(13.0),
+                //     child: Container(
+                //       decoration: BoxDecoration(
+                //         color: Colors.white,
+                //       ),
+                //       // height: 200,
+                //       child: TableCalendar(
+                //         // daysOfWeekVisible: false,
+                //         firstDay: kFirstDay,
+                //         lastDay: kLastDay,
+                //         focusedDay: _focusedDay,
+                //         selectedDayPredicate: (day) =>
+                //             isSameDay(_selectedDay, day),
+                //         rangeStartDay: _rangeStart,
+                //         rangeEndDay: _rangeEnd,
+                //         calendarFormat: _calendarFormat,
+                //         rangeSelectionMode: _rangeSelectionMode,
+
+                //         calendarStyle: CalendarStyle(
+                //             // cellPadding: EdgeInsets.all(1),
+                //             todayDecoration: BoxDecoration(
+                //                 color: kPrimaryColor,
+                //                 borderRadius: BorderRadius.circular(50)),
+                //             selectedDecoration:
+                //                 BoxDecoration(color: kPrimaryColor)),
+
+                //         headerStyle: HeaderStyle(
+                //             formatButtonVisible: false,
+                //             titleCentered: true,
+                //             leftChevronIcon: CircleAvatar(
+                //               backgroundColor: kPrimaryColor,
+                //               child: Icon(
+                //                 Icons.chevron_left,
+                //                 color: Colors.white,
+                //                 size: 28,
+                //               ),
+                //             ),
+                //             rightChevronIcon: CircleAvatar(
+                //               backgroundColor: kPrimaryColor,
+                //               child: Icon(
+                //                 Icons.chevron_right,
+                //                 color: Colors.white,
+                //                 size: 28,
+                //               ),
+                //             ),
+                //             decoration: BoxDecoration(color: Colors.white)),
+                //         // firstDay: DateTime.utc(2010, 10, 16),
+                //         // lastDay: DateTime.utc(2030, 3, 14),
+                //         // focusedDay: DateTime.now(),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+
                 GestureDetector(
                   onTap: () {
                     Get.to(stand_booking());
@@ -252,21 +303,49 @@ class custum_Slider extends StatelessWidget {
             return Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20))),
-              child: Card(
-                elevation: 8,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                child: Image.asset(
-                  "assets/slicing/Untitled-26.png",
-                  width: res_width,
-                  fit: BoxFit.fill,
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(() => PreviewImage());
+                },
+                child: Card(
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Image.asset(
+                    "assets/slicing/Untitled-26.png",
+                    width: res_width,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             );
           },
         );
       }).toList(),
+    );
+  }
+}
+
+class PreviewImage extends StatelessWidget {
+  const PreviewImage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset(
+              "assets/slicing/Untitled-26.png",
+              // width: res_width,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

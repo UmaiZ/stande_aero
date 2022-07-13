@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:stande_aero/helper/colors.dart';
 import 'package:stande_aero/screens/auth/mainlogin.dart';
 import 'package:stande_aero/screens/lease%20Form/lease_form.dart';
 import 'package:stande_aero/screens/lease%20Form/lease_form2.dart';
@@ -19,13 +20,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final Map<int, Color> _yellow700Map = {
+      50: Color(0xffbd9f50),
+      100: Color(0xffbd9f50),
+      200: Color(0xffbd9f50),
+      300: Color(0xffbd9f50),
+      400: Color(0xffbd9f50),
+      500: Color(0xffbd9f50),
+      600: Color(0xffbd9f50),
+      700: Color(0xffbd9f50),
+      800: Color(0xffbd9f50),
+      900: Color(0xffbd9f50),
+    };
+    final MaterialColor _yellow700Swatch =
+        MaterialColor(Color(0xffbd9f50).value, _yellow700Map);
     return GetMaterialApp(
       defaultTransition: Transition.fadeIn,
       transitionDuration: Duration(seconds: 1),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: _yellow700Swatch,
       ),
       home: SplashScreen(),
     );
