@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stande_aero/helper/colors.dart';
+import 'package:stande_aero/screens/auth/mainlogin.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class stand_booking extends StatelessWidget {
@@ -159,20 +161,25 @@ class stand_booking extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  width: res_width * 0.9,
-                  decoration: BoxDecoration(
-                      color: Color(0xffaf8a39),
-                      borderRadius: BorderRadius.all(Radius.circular(7))),
-                  child: Padding(
-                    padding: EdgeInsets.all(13.0),
-                    child: Center(
-                      child: Text(
-                        'Get a quote',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => MainLoginScreen());
+                  },
+                  child: Container(
+                    width: res_width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xffaf8a39),
+                        borderRadius: BorderRadius.all(Radius.circular(7))),
+                    child: Padding(
+                      padding: EdgeInsets.all(13.0),
+                      child: Center(
+                        child: Text(
+                          'Get a quote',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                        ),
                       ),
                     ),
                   ),

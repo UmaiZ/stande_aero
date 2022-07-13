@@ -84,8 +84,8 @@ class _WireTransferState extends State<WireTransfer> {
                 GestureDetector(
                   onTap: () {
                     print('asdasd');
-                    Get.to(() => MainLoginScreen());
-                    // Get.to(() => AwaitingConfirm());
+                    Get.to(() => AwaitingConfirm());
+                    // Get.to(() => MainLoginScreen());
                   },
                   child: Container(
                     width: res_width * 0.9,

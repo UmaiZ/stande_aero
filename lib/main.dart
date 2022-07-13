@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.fadeIn,
+      transitionDuration: Duration(seconds: 1),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -45,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   start() {
-    Timer(Duration(seconds: 3), () => Get.to(() => MainScreen()));
+    Timer(Duration(seconds: 2), () => Get.to(() => MainScreen()));
   }
 
   @override

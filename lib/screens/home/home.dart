@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:stande_aero/helper/colors.dart';
 import 'package:stande_aero/screens/Profile/profile.dart';
 import 'package:stande_aero/screens/booking/booking.dart';
 import 'package:stande_aero/screens/credit_Form/credit_form.dart';
@@ -12,9 +13,14 @@ import 'package:stande_aero/screens/lease%20Form/lease_form2.dart';
 // import 'package:stande_aero/screens/home/Profile/editprofile.dart';
 // import 'package:stande_aero/screens/home/Profile/profile.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     double res_width = MediaQuery.of(context).size.width;
@@ -90,6 +96,150 @@ class HomeScreen extends StatelessWidget {
                         ),
                         border: InputBorder.none,
                       ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: res_height * 0.025,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      // spacing: 10,
+                      // runSpacing: 10,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            // setState(() {
+                            //   catvalue;
+                            // });
+                            filterpopup([
+                              'Engine Stands 1',
+                              'Engine Stands 2',
+                              'Engine Stands 3',
+                              'Engine Stands 5'
+                            ], "cat");
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            decoration: BoxDecoration(
+                                color: kPrimaryColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  10.0, 10.0, 1.0, 10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      catvalue != null
+                                          ? catvalue.toString()
+                                          : 'Engine Stands',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.white,
+                                      )),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.015,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            // print();
+                            filterpopup([
+                              'Manufacture 1',
+                              'Manufacture 2',
+                              'Manufacture 3',
+                              'Manufacture 4',
+                            ], "rad");
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            decoration: BoxDecoration(
+                                color: Color(0xffa1a1a1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      radvalue2 != null
+                                          ? radvalue2.toString()
+                                          : 'Manufactures',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.black,
+                                      )),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.015,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            // print();
+                            filterpopup([
+                              'Manufacture 1',
+                              'Manufacture 2',
+                              'Manufacture 3',
+                              'Manufacture 4',
+                            ], "rad");
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            decoration: BoxDecoration(
+                                color: Color(0xffa1a1a1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      radvalue2 != null
+                                          ? radvalue2.toString()
+                                          : 'Bootstrao Kit',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.black,
+                                      )),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.015,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -198,5 +348,130 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  var catvalue;
+  var radvalue2;
+
+  filterpopup(cat, type) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          double res_width = MediaQuery.of(context).size.width;
+          double res_height = MediaQuery.of(context).size.height;
+
+          return StatefulBuilder(builder: (BuildContext context,
+              StateSetter seetState /*You can rename this!*/) {
+            return Container(
+              height: res_height * 0.6,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: res_height * 0.015,
+                  ),
+                  Container(
+                    height: 7,
+                    width: 35,
+                    decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                  ),
+                  SizedBox(
+                    height: res_height * 0.02,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.grey)),
+                    child: TextField(
+                      decoration: new InputDecoration(
+                        hintText: 'Search Category',
+                        hintStyle: TextStyle(),
+                        contentPadding: EdgeInsets.only(top: 16, left: 16),
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.all(13.0),
+                          child: Icon(Icons.search_outlined),
+                        ),
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: res_height * 0.015,
+                  ),
+                  Container(
+                    height: res_height * 0.35,
+                    child: ListView.builder(
+                      itemCount: cat.length,
+                      itemBuilder: (context, i) {
+                        // print(cat);
+
+                        return ListTile(
+                          title: GestureDetector(
+                            onTap: () {
+                              if (type == "cat") {
+                                catvalue = cat[i].toString();
+                                print(catvalue.toString() + " cat check");
+                                setState(() {
+                                  catvalue;
+                                });
+                              }
+                              if (type == "rad") {
+                                radvalue2 = cat[i].toString();
+                                final splitted =
+                                    cat[i].toString().split('Radius in ');
+                                print(splitted.toString() + " rad check");
+                                setState(() {
+                                  radvalue2 = splitted[0];
+                                });
+                              }
+                              Navigator.pop(context);
+
+                              print(catvalue.toString() + "check");
+                            },
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                      color: kPrimaryColor, width: 1),
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(13.0),
+                                  child: Text(cat[i].toString()),
+                                )),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.all(Radius.circular(7))
+                          // borderRadius: BorderRadius.circular(10)
+                          ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Center(
+                            child: Text(
+                          'Done',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        )),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          });
+        });
   }
 }

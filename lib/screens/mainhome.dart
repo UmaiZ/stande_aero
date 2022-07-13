@@ -36,6 +36,8 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.transparent,
         bottomNavigationBar: GetBuilder<BottomController>(
             builder: (_) => BottomNavigationBar(
+                  backgroundColor: Color(0xff212330),
+                  type: BottomNavigationBarType.fixed,
                   showSelectedLabels: false,
                   showUnselectedLabels: false,
                   selectedItemColor: kPrimaryColor,
@@ -71,7 +73,9 @@ class _MainScreenState extends State<MainScreen> {
                       icon: ImageIcon(
                         bottomctrl.navigationBarIndexValue == 3
                             ? AssetImage("assets/slicing/Untitled-35.png")
-                            : AssetImage("assets/slicing/Untitled-50.png"),
+                            : AssetImage(
+                                "assets/slicing/Untitled-50.png",
+                              ),
                       ),
                       label: '',
                     ),

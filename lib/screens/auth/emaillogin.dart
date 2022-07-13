@@ -102,7 +102,7 @@ class EmailLoginScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(() => AwaitingConfirm());
+                Get.to(() => MainScreen());
               },
               child: Container(
                 width: res_width * 0.9,
