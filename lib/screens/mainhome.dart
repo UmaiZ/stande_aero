@@ -21,9 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   final bottomctrl = Get.put(BottomController());
 
   void _onItemTapped(int index) {
-    setState(() {
-      bottomctrl.navBarChange(index);
-    });
+    bottomctrl.navBarChange(index);
   }
 
   @override

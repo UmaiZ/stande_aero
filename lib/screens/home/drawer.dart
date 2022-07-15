@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:stande_aero/bottomcontroller.dart';
 import 'package:stande_aero/screens/about/aboutus.dart';
 import 'package:stande_aero/screens/credit_Form/credit_form.dart';
+import 'package:stande_aero/screens/home/orderhistory.dart';
+import 'package:stande_aero/screens/home/payment_history.dart';
 import 'package:stande_aero/screens/home/privacy.dart';
 import 'package:stande_aero/screens/home/terms.dart';
 import 'package:stande_aero/screens/kyc_Form/kyc_form.dart';
@@ -186,6 +188,40 @@ class _NavDrawerState extends State<NavDrawer> {
                   ),
                 ),
               ),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Get.to(() => PaymentHistory());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-36.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'Payment History',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+
               // GestureDetector(
               //   behavior: HitTestBehavior.translucent,
               //   onTap: () {
@@ -259,6 +295,40 @@ class _NavDrawerState extends State<NavDrawer> {
               GestureDetector(
                 behavior: HitTestBehavior.translucent,
                 onTap: () {
+                  Get.to(() => OrderHistory());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, right: 13),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child:
+                                  Image.asset("assets/slicing/Untitled-38.png"),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            'Order History',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 1,
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
                   Get.to(() => TexCertificateScreen());
                 },
                 child: Padding(
@@ -289,6 +359,7 @@ class _NavDrawerState extends State<NavDrawer> {
                   ),
                 ),
               ),
+
               GestureDetector(
                 behavior: HitTestBehavior.translucent,
                 onTap: () {
@@ -497,4 +568,22 @@ class _NavDrawerState extends State<NavDrawer> {
       ),
     );
   }
+}
+
+Route scaleIn(Widget page) {
+  return PageRouteBuilder(
+    transitionDuration: const Duration(milliseconds: 400),
+    pageBuilder: (context, animation, secondaryAnimation) => page,
+    transitionsBuilder: (context, animation, secondaryAnimation, page) {
+      var begin = 0.0;
+      var end = 1.0;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      return ScaleTransition(
+        scale: animation.drive(tween),
+        child: page,
+      );
+    },
+  );
 }

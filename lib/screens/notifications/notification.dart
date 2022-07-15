@@ -13,7 +13,29 @@ class NotificationScreen extends StatefulWidget {
   State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _NotificationScreenState extends State<NotificationScreen> {
+class _NotificationScreenState extends State<NotificationScreen>
+    with TickerProviderStateMixin {
+  late AnimationController animation;
+  late Animation<double> _fadeInFadeOut;
+  @override
+  void initState() {
+    super.initState();
+    animation = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 400),
+    );
+    _fadeInFadeOut = Tween<double>(begin: 0.0, end: 1).animate(animation);
+
+    animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        // animation.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        animation.forward();
+      }
+    });
+    animation.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     double res_width = MediaQuery.of(context).size.width;
@@ -79,23 +101,26 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ],
           ),
         ),
-        body: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              SizedBox(
-                height: res_height * 0.02,
-              ),
-              NotBox(),
-              SizedBox(
-                height: res_height * 0.02,
-              ),
-              NotBox(),
-              SizedBox(
-                height: res_height * 0.02,
-              ),
-              NotBox()
-            ],
+        body: FadeTransition(
+          opacity: _fadeInFadeOut,
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: res_height * 0.02,
+                ),
+                NotBox(),
+                SizedBox(
+                  height: res_height * 0.02,
+                ),
+                NotBox(),
+                SizedBox(
+                  height: res_height * 0.02,
+                ),
+                NotBox()
+              ],
+            ),
           ),
         ),
       ),

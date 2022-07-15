@@ -3,35 +3,14 @@ import 'package:get/get.dart';
 import 'package:stande_aero/screens/List%20Quotes/list_of_Quote_details.dart';
 import 'package:stande_aero/screens/home/drawer.dart';
 
-class quotes extends StatefulWidget {
-  const quotes({Key? key}) : super(key: key);
+class PaymentHistory extends StatefulWidget {
+  const PaymentHistory({Key? key}) : super(key: key);
 
   @override
-  State<quotes> createState() => _quotesState();
+  State<PaymentHistory> createState() => _PaymentHistoryState();
 }
 
-class _quotesState extends State<quotes> with TickerProviderStateMixin {
-  late AnimationController animation;
-  late Animation<double> _fadeInFadeOut;
-  @override
-  void initState() {
-    super.initState();
-    animation = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 400),
-    );
-    _fadeInFadeOut = Tween<double>(begin: 0.0, end: 1).animate(animation);
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        // animation.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        animation.forward();
-      }
-    });
-    animation.forward();
-  }
-
+class _PaymentHistoryState extends State<PaymentHistory> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
@@ -58,13 +37,16 @@ class _quotesState extends State<quotes> with TickerProviderStateMixin {
           leading: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () {
-              _key.currentState!.openDrawer();
+              Navigator.pop(context);
+              // _key.currentState!.openDrawer();
             },
             child: Padding(
               padding: const EdgeInsets.all(15),
               child: Container(
                   width: 25,
-                  child: Image.asset('assets/slicing/Untitled-44.png')),
+                  child: Image.asset(
+                    'assets/slicing/Untitled-3.png',
+                  )),
             ),
           ),
           // leading: GestureDetector(
@@ -86,7 +68,7 @@ class _quotesState extends State<quotes> with TickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'List of Quotes',
+                'Payment History',
                 style: TextStyle(color: Colors.black),
               ),
               Container(
@@ -98,46 +80,43 @@ class _quotesState extends State<quotes> with TickerProviderStateMixin {
           ),
         ),
         // extendBodyBehindAppBar: true,
-        body: FadeTransition(
-          opacity: _fadeInFadeOut,
-          child: Container(
-            width: double.infinity,
-            // height:  double.infinity,
-            // decoration: BoxDecoration(
-            //   image: DecorationImage(
-            //     image: AssetImage("assets/slicing/Untitled-46.jpg"),
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Quotes_Card(
-                    MODEL: "CF34-10 DAE",
-                    location: "Miami, Florida",
-                    description:
-                        "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
-                  ),
-                  Quotes_Card(
-                    MODEL: "CF34-10 DAE",
-                    location: "Miami, Florida",
-                    description:
-                        "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
-                  ),
-                  Quotes_Card(
-                    MODEL: "CF34-10 DAE",
-                    location: "Miami, Florida",
-                    description:
-                        "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
-                  ),
-                  Quotes_Card(
-                    MODEL: "CF34-10 DAE",
-                    location: "Miami, Florida",
-                    description:
-                        "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
-                  )
-                ],
-              ),
+        body: Container(
+          width: double.infinity,
+          // height:  double.infinity,
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage("assets/slicing/Untitled-46.jpg"),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Quotes_Card(
+                  MODEL: "CF34-10 DAE",
+                  location: "Miami, Florida",
+                  description:
+                      "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
+                ),
+                Quotes_Card(
+                  MODEL: "CF34-10 DAE",
+                  location: "Miami, Florida",
+                  description:
+                      "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
+                ),
+                Quotes_Card(
+                  MODEL: "CF34-10 DAE",
+                  location: "Miami, Florida",
+                  description:
+                      "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
+                ),
+                Quotes_Card(
+                  MODEL: "CF34-10 DAE",
+                  location: "Miami, Florida",
+                  description:
+                      "Lorem Ipsum is simply \ndummy text of the printing \nand typesetting industry",
+                )
+              ],
             ),
           ),
         ),
@@ -162,7 +141,7 @@ class Quotes_Card extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Get.to(quotes_details());
+            // Get.to(quotes_details());
           },
           child: Container(
             width: res_width * 0.925,
